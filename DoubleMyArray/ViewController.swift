@@ -33,12 +33,15 @@ extension ViewController {
     // Function which doubles the input array
     
     public func doubleMultiplier(array: [Float], inputSize: Int) -> [Float] {
+        let doubledArray: [Float]
         let arraySize = array.count
         var arrayPointer = UnsafeMutablePointer<Float>.allocate(capacity: inputSize)
         
         arrayPointer.initialize(from: array, count: inputSize)
         arrayPointer = doubleThisArray(arrayPointer, Int32(arraySize))
-        return convert(length: arraySize, data: arrayPointer)
+        doubledArray = convert(length: arraySize, data: arrayPointer)
+        arrayPointer.deallocate()
+        return doubledArray
     }
     
     // Function which convert the C style array to Swift Style Array.
