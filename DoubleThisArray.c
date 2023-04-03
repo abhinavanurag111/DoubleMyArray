@@ -9,10 +9,10 @@
 
 // C Function which is called by Swift Code to double the array.
 
-float * doubleThisArray(float incoming[], int n) {
+float * doubleThisArray(float userInput[], int n) {
     
     for(int i = 0; i < n; i++) {
-        incoming[i] *= 2;
+        userInput[i] *= 2;
     }
-    return incoming;
+    return userInput;
 }
