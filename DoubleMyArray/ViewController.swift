@@ -25,7 +25,7 @@ extension ViewController {
     
     // Wrapper Function
     
-    private func processUserInput(for array: [Float]) -> [Float] {
+    public func processUserInput(for array: [Float]) -> [Float] {
         let inputSize = array.count
         return doubleMultiplier(array: array, inputSize: inputSize)
     }
